@@ -10,7 +10,7 @@ module.exports = {
   },
   extends: ["@nuxtjs/eslint-config-typescript", "plugin:prettier/recommended"],
   rules: {
-    // override/add rules settings here, such as:
-    // 'vue/no-unused-vars': 'error'
+    "no-console": "error",
+    "no-debugger": "error",
   },
 };
