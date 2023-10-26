@@ -13,5 +13,5 @@
     "strings": "on"
   },
   "tailwindCSS.experimental.configFile": "tailwind.config.ts",
-  "tailwindCSS.classAttributes": ["class", "className", "ngClass"]
+  "tailwindCSS.classAttributes": ["class"]
 }

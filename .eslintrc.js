@@ -4,7 +4,7 @@ module.exports = {
     browser: true,
     node: true,
   },
-  plugins: ['unused-imports', 'prettier'],
+  plugins: ['unused-imports'],
   extends: [
     'plugin:vue/vue3-recommended',
     '@nuxtjs/eslint-config-typescript',
