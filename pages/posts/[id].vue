@@ -11,12 +11,4 @@ definePageMeta({
 const route = useRoute();
 
 const id = route.params.id;
-
-onMounted(() => {
-  console.log('monted post :>> ');
-});
-
-// When accessing /posts/1, route.params.id will be 1
-
-console.log('id :>> ', id);
 </script>

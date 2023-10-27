@@ -21,3 +21,23 @@
     </div>
   </div>
 </template>
+<script setup lang="ts">
+import { useStorage } from '@vueuse/core';
+import { ECookie } from '~/enums/cookies';
+
+const state = useStorage('access_token', '');
+
+const { setValue: setUserAuth } = useManageCookies(ECookie.ACCESS_TOKEN);
+
+watch(
+  state,
+  (value) => {
+    if (value) {
+      setUserAuth(value);
+    }
+  },
+  {
+    immediate: true,
+  },
+);
+</script>

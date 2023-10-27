@@ -39,7 +39,7 @@
           </div>
         </div>
         <div>
-          <button class="btn-primary">Button blue</button>
+          <button class="btn-primary" @click="refresh()">Button blue</button>
         </div>
         <div>
           <button class="btn-secondary">Button secondary</button>
@@ -55,25 +55,8 @@ import { IStore } from '~/interfaces/store';
 // ------------------ runtime config / .env ---------------
 const runtimeConfig = useRuntimeConfig();
 
-const { data, pending, error, refresh } = useFetch<any>(`/v1/stores`, {
+const { data, refresh } = await useFetch<any>(`/v1/stores`, {
   baseURL: runtimeConfig.public.apiBaseUrl,
   transform: (data) => data['hydra:member'] as IStore[],
 });
-
-// watch(
-//   data,
-//   (val) => {
-//     console.log('val[hydra:member] :>> ', val);
-//   },
-//   {
-//     immediate: true,
-//   },
-// );
-
-console.log(
-  'runtimeConfig.public.apiBaseUrl :>> ',
-  runtimeConfig.public.apiBaseUrl,
-);
-
-console.log('stores ..:>> ', data);
 </script>

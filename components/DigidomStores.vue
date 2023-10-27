@@ -22,7 +22,5 @@
 </template>
 
 <script setup lang="ts">
-const { data, pending, error, refresh } = useFetch(`/api/store`);
-
-console.log('data :>> ', data);
+const { data, refresh } = await useFetch(`/api/store`);
 </script>

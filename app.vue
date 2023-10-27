@@ -6,22 +6,6 @@
   </div>
 </template>
 <script setup lang="ts">
-// ------------------ runtime config / .env ---------------
-const runtimeConfig = useRuntimeConfig();
-console.log(
-  'runtimeConfig.apiSecretConfig :>> ',
-  runtimeConfig.apiSecretConfig,
-);
-console.log(
-  'runtimeConfig.public.apiBaseUrl :>> ',
-  runtimeConfig.public.apiBaseUrl,
-);
-
-// ------------- App config ---------------------
-const appConfig = useAppConfig();
-
-console.log('appConfig.title :>> ', appConfig.title);
-
 useHead({
   title: 'My App',
   meta: [{ name: 'description', content: 'Learn nuxt 3' }],
