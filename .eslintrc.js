@@ -14,6 +14,7 @@ module.exports = {
     'no-console': 'error',
     'no-debugger': 'error',
     'unused-imports/no-unused-imports-ts': 2,
+    'unused-imports/no-unused-vars': 'error',
   },
   parser: 'vue-eslint-parser',
   parserOptions: {
