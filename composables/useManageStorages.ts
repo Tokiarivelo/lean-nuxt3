@@ -8,5 +8,5 @@ export const useManageStorages = <T>(name: ELocalStorage, defaultValue?: T) => {
     storage.value = _value;
   };
 
-  return { value: storage.value, setValue };
+  return { value: storage, setValue };
 };

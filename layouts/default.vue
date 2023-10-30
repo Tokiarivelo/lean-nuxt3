@@ -1,33 +1,53 @@
 <template>
-  <div
-    class="bg-white font-default dark:bg-dark-bg-tunnel dark:text-dark-white-tunnel"
-  >
-    <div>
-      <p class="h-10 bg-[#bada55] text-blue-300">
-        Some default layout content shared across all pages
-      </p>
-      <img src="/favicon.ico" />
-      <img src="/img/header.jpg" />
-      <nav>
-        <ul>
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/posts/1">Post 1</NuxtLink></li>
-          <li><NuxtLink to="/posts/2">Post 2</NuxtLink></li>
-          <li><NuxtLink to="/no-page">No page</NuxtLink></li>
-          <li><NuxtLink to="/stores">Stores</NuxtLink></li>
-        </ul>
-      </nav>
+  <div class="flex h-full flex-col">
+    <div
+      class="flex h-20 flex-row content-between items-center justify-between p-8 sm:p-5"
+    >
+      <!-- Previous route -->
+      <button>
+        <div class="flex flex-row items-center text-green-tunnel">
+          <div class="mr-2">
+            <img alt="arrow-green-left" src="/svg/arrow-green-left.svg" />
+          </div>
+          <div class="text-lg"><b>Précédent</b></div>
+        </div>
+      </button>
+
+      <!-- Digidom logo -->
+      <div>
+        <img class="h-12" alt="digidom" src="/img/digidom_logo.png" />
+      </div>
+
+      <!-- Contact Digidom -->
+      <div class="flex flex-row items-center">
+        <div>
+          <img
+            class="h-6 w-6"
+            alt="telephone-green"
+            src="/svg/telephone-green.svg"
+          />
+        </div>
+        <div class="ml-2 flex flex-col items-end">
+          <div class="text-lg text-green-tunnel">
+            <b><a href="tel:+33185533824">01 85 53 38 24</a></b>
+          </div>
+          <div class="text-xs">Numéro non surtaxé</div>
+        </div>
+      </div>
+    </div>
+    <div class="flex-1">
       <slot />
-      <div class="h-10 text-blue-600">Footer</div>
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { useStorage } from '@vueuse/core';
 import { ECookie } from '~/enums/cookies';
+import { ELocalStorage } from '~/enums/localStorage';
 
-const state = useStorage('access_token', '');
+const { value: state } = useManageStorages<string>(
+  ELocalStorage.ACCESS_TOKEN,
+  '',
+);
 
 const { setValue: setUserAuth } = useManageCookies(ECookie.ACCESS_TOKEN);
 

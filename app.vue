@@ -1,6 +1,9 @@
 <template>
-  <div>
+  <div
+    class="height-full-screen bg-white font-default dark:bg-dark-bg-tunnel dark:text-dark-white-tunnel"
+  >
     <NuxtLayout>
+      <NuxtLoadingIndicator />
       <NuxtPage />
     </NuxtLayout>
     <button @click="changeTheme">change theme</button>
@@ -14,7 +17,7 @@ const mode = useColorMode();
 useHead({
   title: 'Digidom Tunnel',
   bodyAttrs: {
-    class: 'test',
+    class: 'height-full-screen',
   },
   link: [
     {
@@ -38,7 +41,6 @@ const changeTheme = () => {
 .page-enter-from,
 .page-leave-to {
   opacity: 0;
-  filter: rotate3d(1, 1, 1, 15deg);
 }
 .layout-enter-active,
 .layout-leave-active {
@@ -47,6 +49,5 @@ const changeTheme = () => {
 .layout-enter-from,
 .layout-leave-to {
   opacity: 0;
-  transform: rotate3d(1, 1, 1, 15deg);
 }
 </style>
