@@ -1,4 +1,6 @@
-export const useManageCookies = <T>(name: string) => {
+import { ECookie } from '~/enums/cookies';
+
+export const useManageCookies = <T>(name: ECookie) => {
   const cookie = useCookie<T>(name);
 
   const setValue = (_value: T) => {

@@ -26,11 +26,17 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    // The private keys which are only available server-side
-    apiSecretConfig: '123',
     // Keys within public are also exposed client-side
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
+      sentryRelease: process.env.SENTRY_RELEASE,
+      sentryAuthToken: process.env.SENTRY_AUTH_TOKEN,
+      segmentWriteKey: process.env.NUXT_SEGEMENT_WRITE_KEY,
+      segmentDigidomSite: process.env.NUXT_DIGIDOM_SITE,
+      adminUrl: process.env.NUXT_NEW_ADMIN_URL,
+      crispId: process.env.NUXT_CRISP_WEBSITE_ID,
+      sentryDns: process.env.NUXT_SENTRY_DNS,
+      gtmId: process.env.NUXT_GTM_ID,
     },
   },
 });

@@ -1,34 +1,33 @@
 <template>
-  <div class="p-5 font-default">
+  <div>
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+    <button @click="changeTheme">change theme</button>
   </div>
 </template>
 <script setup lang="ts">
+import { ETheme } from './enums/theme';
+
+const mode = useColorMode();
+
 useHead({
-  title: 'My App',
-  meta: [{ name: 'description', content: 'Learn nuxt 3' }],
+  title: 'Digidom Tunnel',
   bodyAttrs: {
     class: 'test',
   },
   link: [
     {
       type: 'image/svg+xml',
-      href: '/img/e-learning-icon.svg',
+      href: '/img/digidom-favicon.png',
       rel: 'icon',
     },
   ],
 });
 
-useSeoMeta({
-  // title: 'My Amazing Site',
-  ogTitle: 'My Amazing Site',
-  description: 'This is my amazing site, let me tell you all about it.',
-  ogDescription: 'This is my amazing site, let me tell you all about it.',
-  ogImage: '/img/e-learning-icon.svg',
-  twitterCard: 'summary_large_image',
-});
+const changeTheme = () => {
+  mode.value = mode.value === ETheme.LIGHT ? ETheme.DARK : ETheme.LIGHT;
+};
 </script>
 
 <style>

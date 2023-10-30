@@ -1,5 +1,7 @@
 <template>
-  <div>
+  <div
+    class="bg-white font-default dark:bg-dark-bg-tunnel dark:text-dark-white-tunnel"
+  >
     <div>
       <p class="h-10 bg-[#bada55] text-blue-300">
         Some default layout content shared across all pages

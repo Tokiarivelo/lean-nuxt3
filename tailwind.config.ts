@@ -30,6 +30,8 @@ export default {
         'gray-tunnel': 'rgba(58, 53, 87)',
         'gray-light-tunnel': 'rgba(58, 53, 87, 0.05)',
         'purple-dark-tunnel': '#3A3557',
+        'dark-bg-tunnel': '#1e1e20',
+        'dark-white-tunnel': '#fffff5db',
       },
     },
   },
