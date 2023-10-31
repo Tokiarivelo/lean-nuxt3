@@ -1,19 +1,15 @@
 <template>
   <div
-    class="height-full-screen bg-white font-default dark:bg-dark-bg-tunnel dark:text-dark-white-tunnel"
+    class="height-full-screen relative bg-white font-default dark:bg-dark-bg-tunnel dark:text-dark-white-tunnel"
   >
     <NuxtLayout>
-      <NuxtLoadingIndicator />
+      <nuxt-loading-indicator />
       <NuxtPage />
     </NuxtLayout>
-    <button @click="changeTheme">change theme</button>
+    <ThemeSwitcher />
   </div>
 </template>
 <script setup lang="ts">
-import { ETheme } from './enums/theme';
-
-const mode = useColorMode();
-
 useHead({
   title: 'Digidom Tunnel',
   bodyAttrs: {
@@ -27,10 +23,6 @@ useHead({
     },
   ],
 });
-
-const changeTheme = () => {
-  mode.value = mode.value === ETheme.LIGHT ? ETheme.DARK : ETheme.LIGHT;
-};
 </script>
 
 <style>
